@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizz Buzz</title>
+</head>
+<script>
+    let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz to: "));
+    fizzBuzz(answer);
+    function fizzBuzz(input) {
+        let i, num, result = '';
+        for(i = 1; i <= input; i++) {
+            if(i%3 == 0 && i%5 == 0) {
+                result = result.concat('FizzBuzz, ');
+            }
+            else if(i%5 == 0){
+                result = result.concat('Buzz, ');
+            }
+            else if(i%3 == 0){
+                result = result.concat('Fizz, ');
+            }
+            else{
+                num = i.toString();
+                result = result.concat(num, ', ');
+            }
+        }
+        document.write(result.slice(0, -2) + '.')
+        return console.log(result.slice(0, -2) + '.'); //takes out last comma and replaces it with period.
+    }
+</script>
+<body>
+</body>
+</html>
