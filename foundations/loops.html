@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //LOOPING CODE
+
+    //for...of loop (for collections)
+    const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+    for (const cat of cats) { //assigns first item to cat, then executes code in brackets, then continues
+        console.log(cat);
+    }
+
+    //map() and filter() (specialized loops for collections)
+    //map()
+    const upperCats = cats.map(toUpper); //does something to each item in collection
+    //filter()
+    function lCat(cat) {
+        return cat.startsWith('L');
+    }
+    const filtered = cats.filter(lCat); //creates new collections with items that only match
+
+    //standard for loop
+    //for (initializer; condition; final-expression)
+    //for(let i = 0; i < 5; i++)
+    const results = document.querySelector('#results');
+    function calculate() {
+        for (let i = 1; i < 10; i++) {
+            const newResult = `${i} x ${i} = ${i * i}`;
+            results.textContent += `${newResult}\n`;
+        }
+        results.textContent += '\n...finished!';
+    }
+
+    //while and do...while
+    let myFavoriteCats = 'My cats are called ';
+    let i = 0;
+    while (i < cats.length) {
+        if (i === cats.length - 1) {
+            myFavoriteCats += `and ${cats[i]}.`;
+        } else {
+            myFavoriteCats += `${cats[i]}, `;
+        }
+        i++;
+    }
+
+
+    //ACTIVE LEARNING LAUNCH COUNTDOWN
+    let output = document.querySelector('.output');
+    output.innerHTML = '';
+
+    for(let i = 10; i >= 0; i--) {
+        const para = document.createElement('p');
+        if(i == 10) {
+            para.textContent = 'Countdown 10';
+        }
+        else if(i == 0) {
+            para.textContent = 'Blast off!';
+        }
+        else {
+            para.textContent = `${i}`;
+        }
+        output.appendChild(para);
+    }
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
